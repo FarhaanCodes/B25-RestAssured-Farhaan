@@ -25,4 +25,5 @@ public class SimpleGetRequest {
         Assertions.assertEquals(200, response.statusCode());
 
     }
+
 }
