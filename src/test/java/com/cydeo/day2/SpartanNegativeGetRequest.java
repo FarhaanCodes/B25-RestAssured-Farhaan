@@ -8,6 +8,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static io.restassured.RestAssured.given;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class SpartanNegativeGetRequest {
 
     //beforeAll is the same thing with beforeClass in testing
@@ -20,9 +23,7 @@ public class SpartanNegativeGetRequest {
     @Test
     public void test1(){
 
-        Response response =
-                RestAssured.
-                        given().accept(ContentType.JSON).when().get("/api/spartans");
+        Response response = given().accept(ContentType.JSON).when().get("/api/spartans");
 
         // Print Status Code
         System.out.println("response.statusCode() = " + response.statusCode());
@@ -33,10 +34,10 @@ public class SpartanNegativeGetRequest {
         //how to test api?
         //verify status code is 200
 
-        Assertions.assertEquals(200, response.statusCode());
+        assertEquals(200, response.statusCode());
 
         //verify content type is application json
-        Assertions.assertEquals("application/json" , response.contentType());
+        assertEquals("application/json" , response.contentType());
 
     }
 
@@ -51,18 +52,18 @@ public class SpartanNegativeGetRequest {
     @Test
     public void test2(){
 
-        Response response = RestAssured.given().accept(ContentType.XML).when().get("/api/spartans/10");
+        Response response = given().accept(ContentType.XML).when().get("/api/spartans/10");
 
         response.prettyPrint();
 
         // Shows the status code and verifys it
         System.out.println("response.statusCode() = " + response.statusCode());
-        Assertions.assertEquals(406, response.statusCode());
+        assertEquals(406, response.statusCode());
 
 
         // Shows what content type it is and verifys it as well
         System.out.println("response.contentType() = " + response.contentType());
-        Assertions.assertEquals("application/xml;charset=UTF-8" , response.contentType());
+        assertEquals("application/xml;charset=UTF-8" , response.contentType());
 
 
 
