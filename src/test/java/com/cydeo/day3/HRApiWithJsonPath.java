@@ -49,4 +49,41 @@ public class HRApiWithJsonPath extends HrTestBase {
         System.out.println("countrylistwith2 = " + countrylistwithID2);
     }
 
+
+    @DisplayName("GET request to /employees with param")
+    @Test
+    public void test2() {
+
+        Response response = given().queryParam("limit", 150)
+                .when().get("/employees");
+
+        //get jsonpath
+        JsonPath jsonPath = response.jsonPath();
+
+
+        //get me all emails who is working as IT_PROG
+        List<String> list = jsonPath.getList("items.findAll {it.job_id==\"IT_PROG\"}.email");
+        System.out.println(list);
+
+
+        //get me first name of employees who is making more than 10000
+        List<String> nameList = jsonPath.getList("items.findAll {it.salary>10000}.first_name");
+        System.out.println("nameList = " + nameList);
+
+
+
+        //get me the first name of who is making the highest salary
+        String maxFirstName = jsonPath.getString("items.max {it.salary}.first_name");
+
+        System.out.println(maxFirstName);
+
+        String minFirstName = jsonPath.getString("items.min {it.salary}.first_name");
+
+        System.out.println(minFirstName);
+
+        System.out.println(response.path("items.max {it.salary}.first_name").toString());
+
+
+    }
+
 }
