@@ -1,6 +1,6 @@
 package com.cydeo.day3;
 
-import com.cydeo.utillities.HrTestBase;
+import com.cydeo.utilities.HrTestBase;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.DisplayName;
@@ -9,9 +9,6 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static io.restassured.RestAssured.*;
-import static org.junit.jupiter.api.Assertions.*;
-
-import com.cydeo.utillities.HrTestBase;
 
 public class HRApiWithJsonPath extends HrTestBase {
 

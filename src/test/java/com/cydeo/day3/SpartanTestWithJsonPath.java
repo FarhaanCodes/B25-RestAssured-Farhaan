@@ -1,5 +1,5 @@
 package com.cydeo.day3;
-import com.cydeo.utillities.SpartanTestBase;
+import com.cydeo.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.*;
-
-import com.cydeo.utillities.SpartanTestBase;
 
 public class SpartanTestWithJsonPath extends SpartanTestBase {
     /*

@@ -1,10 +1,8 @@
 package com.cydeo.day3;
 
-import com.cydeo.utillities.SpartanTestBase;
-import io.restassured.RestAssured;
+import com.cydeo.utilities.SpartanTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

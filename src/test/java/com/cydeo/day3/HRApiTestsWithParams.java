@@ -1,15 +1,9 @@
 package com.cydeo.day3;
 
-import com.cydeo.utillities.HrTestBase;
-import io.restassured.RestAssured;
+import com.cydeo.utilities.HrTestBase;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
