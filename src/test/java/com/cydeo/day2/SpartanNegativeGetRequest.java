@@ -56,12 +56,12 @@ public class SpartanNegativeGetRequest {
 
         response.prettyPrint();
 
-        // Shows the status code and verifys it
+        // Shows the status code and verifies it
         System.out.println("response.statusCode() = " + response.statusCode());
         assertEquals(406, response.statusCode());
 
 
-        // Shows what content type it is and verifys it as well
+        // Shows what content type it is and verifies it as well
         System.out.println("response.contentType() = " + response.contentType());
         assertEquals("application/xml;charset=UTF-8" , response.contentType());
 
